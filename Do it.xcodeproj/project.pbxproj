@@ -13,6 +13,7 @@
 		BD1CD6351F20BAD4004F2A95 /* Do_it.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD1CD6331F20BAD4004F2A95 /* Do_it.xcdatamodeld */; };
 		BD1CD6371F20BAD4004F2A95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD1CD6361F20BAD4004F2A95 /* Assets.xcassets */; };
 		BD1CD63A1F20BAD4004F2A95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD1CD6381F20BAD4004F2A95 /* LaunchScreen.storyboard */; };
+		BD1CD6421F20BFB0004F2A95 /* tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1CD6411F20BFB0004F2A95 /* tasks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BD1CD6361F20BAD4004F2A95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD1CD6391F20BAD4004F2A95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD1CD63B1F20BAD4004F2A95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD1CD6411F20BFB0004F2A95 /* tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tasks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				BD1CD62C1F20BAD4004F2A95 /* AppDelegate.swift */,
 				BD1CD62E1F20BAD4004F2A95 /* ViewController.swift */,
 				BD1CD6301F20BAD4004F2A95 /* Main.storyboard */,
+				BD1CD6411F20BFB0004F2A95 /* tasks.swift */,
 				BD1CD6361F20BAD4004F2A95 /* Assets.xcassets */,
 				BD1CD6381F20BAD4004F2A95 /* LaunchScreen.storyboard */,
 				BD1CD63B1F20BAD4004F2A95 /* Info.plist */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD1CD6421F20BFB0004F2A95 /* tasks.swift in Sources */,
 				BD1CD6351F20BAD4004F2A95 /* Do_it.xcdatamodeld in Sources */,
 				BD1CD62F1F20BAD4004F2A95 /* ViewController.swift in Sources */,
 				BD1CD62D1F20BAD4004F2A95 /* AppDelegate.swift in Sources */,
