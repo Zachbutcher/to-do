@@ -140,28 +140,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FVQ-tG-vuY">
-                                <rect key="frame" x="142" y="323.5" width="90.5" height="20.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJn-IQ-euI">
-                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FVQ-tG-vuY">
+                                <rect key="frame" x="142" y="324" width="91" height="21"/>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJn-IQ-euI">
+                                <rect key="frame" x="142" y="89" width="91" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iZ-4a-5Vi">
+                                <rect key="frame" x="135.5" y="160" width="104" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="IKF-rz-RF9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Complete"/>
+                                <connections>
+                                    <action selector="completeTask:" destination="RVm-HP-jug" eventType="touchUpInside" id="5Se-HG-7dZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FVQ-tG-vuY" firstAttribute="centerX" secondItem="H1z-tU-i3N" secondAttribute="centerX" id="6eE-bi-Vpc"/>
-                            <constraint firstItem="FVQ-tG-vuY" firstAttribute="centerY" secondItem="H1z-tU-i3N" secondAttribute="centerY" id="arQ-ZA-frA"/>
+                            <constraint firstItem="LJn-IQ-euI" firstAttribute="top" secondItem="hEc-Oc-qMP" secondAttribute="bottom" constant="25" id="IAH-Pl-zES"/>
+                            <constraint firstItem="LJn-IQ-euI" firstAttribute="centerX" secondItem="H1z-tU-i3N" secondAttribute="centerX" id="Nxk-cl-OJn"/>
+                            <constraint firstItem="9iZ-4a-5Vi" firstAttribute="centerX" secondItem="H1z-tU-i3N" secondAttribute="centerX" id="SzX-BU-OJg"/>
+                            <constraint firstItem="FVQ-tG-vuY" firstAttribute="top" secondItem="H1z-tU-i3N" secondAttribute="top" constant="324" id="XuW-B9-LNt"/>
+                            <constraint firstItem="Lqf-DZ-mjQ" firstAttribute="top" secondItem="FVQ-tG-vuY" secondAttribute="bottom" constant="322" id="cag-Qe-DVl"/>
+                            <constraint firstItem="9iZ-4a-5Vi" firstAttribute="top" secondItem="LJn-IQ-euI" secondAttribute="bottom" constant="50" id="j5b-0k-qv8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="taskNameLabel" destination="LJn-IQ-euI" id="L3v-LM-JgC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1GS-AT-mA2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1860" y="734"/>
+            <point key="canvasLocation" x="1860" y="732.68365817091455"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Y0-ji-t7o">

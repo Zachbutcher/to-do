@@ -13,15 +13,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet var tableview: UITableView!
     
     var tasks :[Task] = []
+    var selectedindex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        tasks = makeTasks()
-        
         tableview.dataSource = self
         tableview.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getTasks()
+        tableview.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,7 +43,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         if task.important{
-            cell.textLabel?.text = " ‼️ \(task.name)"
+            cell.textLabel?.text = " ‼️ \(task.name!)"
         }else {
             
             cell.textLabel?.text = task.name
@@ -48,6 +52,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        selectedindex = indexPath.row
+        
         tableView.deselectRow(at: indexPath, animated: false)
         performSegue(withIdentifier: "GoToDetails", sender: tasks[indexPath.row])
     }
@@ -57,22 +64,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if sender
-        print(sender)
-        let nextVC = segue.destination as! CreateTaskViewController
-        nextVC.previousViewController = self
-    }
-    func makeTasks () -> [Task]{
-        let Task1 = Task()
-        Task1.name = "Do Gabby"
-        Task1.important = true
-        let Task2 = Task()
-        Task2.name = "Feed Rhodey"
-        let task3 = Task()
-        task3.name = "Move to Phoenix"
         
-        return [Task1, Task2, task3]
+        
+        if segue.identifier == ("GoToDetails"){
+            let nextVC = segue.destination as! CompleteTaskViewController
+            
+            nextVC.task = sender as! Task
+            nextVC.selectedindex = selectedindex
+        }
+        
     }
     
+    func getTasks(){
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        do {
+            try tasks = context.fetch(Task.fetchRequest()) as! [Task]
+        }catch{
+            
+        }
+        
+    }
 }
 

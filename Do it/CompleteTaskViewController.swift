@@ -10,9 +10,24 @@ import UIKit
 
 class CompleteTaskViewController: UIViewController {
 
+    
+    @IBOutlet weak var taskNameLabel: UILabel!
+    
+    var task : Task? = nil
+    var selectedindex = 0
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if task!.important{
+            taskNameLabel.text = " ‼️ \(task!.name!)"
+        }else {
+            
+            taskNameLabel.text = task!.name
+        }
+        taskNameLabel.text = task!.name
         // Do any additional setup after loading the view.
     }
 
@@ -22,6 +37,15 @@ class CompleteTaskViewController: UIViewController {
     }
     
 
+    @IBAction func completeTask(_ sender: Any) {
+
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        context.delete(task!)
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        _ = navigationController?.popViewController(animated: true)
+    }
     /*
     // MARK: - Navigation
 
