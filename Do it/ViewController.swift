@@ -47,8 +47,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        performSegue(withIdentifier: "GoToDetails", sender: tasks[indexPath.row])
+    }
+    
     @IBAction func addNewTask(_ sender: Any) {
         performSegue(withIdentifier: "addNewText", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if sender
+        print(sender)
+        let nextVC = segue.destination as! CreateTaskViewController
+        nextVC.previousViewController = self
     }
     func makeTasks () -> [Task]{
         let Task1 = Task()
